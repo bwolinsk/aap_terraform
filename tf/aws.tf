@@ -1,0 +1,32 @@
+provider "aws" {
+  region = "us-east-2"
+}
+
+resource "aws_vpc" "tf_vpc" {
+  cidr_block = "192.168.22.0/24"
+
+  tags = {
+    Name = "tf_vpc"
+  }
+}
+
+resource "aws_subnet" "tf_subnet" {
+  vpc_id     = aws_vpc.tf_vpc.id
+  cidr_block = "192.168.22.0/24"
+
+  tags = {
+    Name = "tf_subnet"
+  }
+}
+
+resource "aws_instance" "example" {
+  ami = "ami-0c9978668f8d55984"
+  instance_type = "t2.micro"
+  key_name      = "rhtpad"
+  count         = "1"
+  subnet_id     = aws_subnet.tf_subnet.id
+}
+
+output "address" {
+  value = aws_instance.example.*.public_dns
+}
