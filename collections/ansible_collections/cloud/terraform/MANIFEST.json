@@ -1,0 +1,33 @@
+{
+ "collection_info": {
+  "namespace": "cloud",
+  "name": "terraform",
+  "version": "1.0.0",
+  "authors": [
+   "Ansible (https://github.com/ansible)"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "terraform",
+   "cloud",
+   "infrastructure",
+   "cluster"
+  ],
+  "description": "Terraform collection for Ansible.",
+  "license": [],
+  "license_file": "LICENSE",
+  "dependencies": {},
+  "repository": "https://github.com/ansible-collections/cloud.terraform",
+  "documentation": null,
+  "homepage": "https://github.com/ansible-collections/cloud.terraform",
+  "issues": "https://github.com/ansible-collections/cloud.terraform/issues"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "b1bfadf8e383f8ae9ba731a8c60582a5c898c911c8f0adce496f189c5e0cfd04",
+  "format": 1
+ },
+ "format": 1
+}
