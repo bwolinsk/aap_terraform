@@ -1,7 +1,7 @@
 ---
-#- name: Calling terraform to build resources
-#  hosts: localhost
-#  tasks:
+- name: Calling terraform to build resources
+  hosts: localhost
+  tasks:
 #  - name: Basic deploy of a service
 #    cloud.terraform.terraform:
 #      project_path: './tf/'
