@@ -10,6 +10,14 @@ resource "aws_vpc" "tf_vpc" {
   }
 }
 
+resource "aws_internet_gateway" "tf_gateway" {
+  vpc_id = aws_vpc.tf_vpc.id
+ 
+  tags = {
+    Name = "tf_gateway"
+  }
+}
+
 resource "aws_subnet" "tf_subnet" {
   vpc_id     = aws_vpc.tf_vpc.id
   cidr_block = "192.168.22.0/24"
@@ -30,11 +38,19 @@ resource "aws_instance" "example" {
 resource "aws_eip" "tf_eip" {
   instance = aws_instance.example[0].id
   vpc = true
+
+  tags = {
+    Name = "tf_eip"
+  }
 }
 
 resource "aws_eip_association" "tf_eip_association" {
   instance_id = aws_instance.example[0].id
   allocation_id = "eipalloc-01da02aa45306e506"
+
+  tags = {
+    Name = "tf_eip_association"
+  }
 }
 
 output "address" {
