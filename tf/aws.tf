@@ -23,6 +23,7 @@ resource "aws_instance" "example" {
   ami = "ami-0c9978668f8d55984"
   instance_type = "t2.micro"
   key_name      = "controller_bart"
+  ecs_associate_public_ip_address = "true"
   count         = "1"
   subnet_id     = aws_subnet.tf_subnet.id
 }
