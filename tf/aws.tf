@@ -47,10 +47,6 @@ resource "aws_eip" "tf_eip" {
 resource "aws_eip_association" "tf_eip_association" {
   instance_id = aws_instance.example[0].id
   allocation_id = "eipalloc-01da02aa45306e506"
-
-  tags = {
-    Name = "tf_eip_association"
-  }
 }
 
 output "address" {
