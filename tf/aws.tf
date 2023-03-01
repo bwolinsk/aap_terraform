@@ -28,12 +28,12 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_eip" "tf_eip" {
-  instance = aws_instance.example.id
+  instance = aws_instance.example[0].id
   vpc = true
 }
 
 resource "aws_eip_association" "tf_eip_association" {
-  instance_id = aws_instance.example.id
+  instance_id = aws_instance.example[0].id
   allocation_id = "eipalloc-01da02aa45306e506"
 }
 
