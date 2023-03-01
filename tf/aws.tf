@@ -28,7 +28,7 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_eip" "tf_eip" {
-  instance = aws_instance.example.id"
+  instance = aws_instance.example.id
   vpc = true
 }
 
