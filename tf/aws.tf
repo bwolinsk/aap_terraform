@@ -63,7 +63,7 @@ resource "aws_instance" "example" {
   key_name      = "controller_bart"
   count         = "1"
   subnet_id     = aws_subnet.tf_subnet.id
-  vpc_security_group_ids = [aws_security_group.main.id]
+  security_groups = [aws_security_group.main.name]
 }
 
 output "address" {
