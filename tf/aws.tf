@@ -29,7 +29,6 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_security_group" "main" {
-  name = "security-group"
   vpc_id = aws_vpc.tf_vpc.id 
 
   ingress {
