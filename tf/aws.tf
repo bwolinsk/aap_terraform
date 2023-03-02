@@ -29,6 +29,7 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_security_group" "main" {
+  name = "main"
   vpc_id = aws_vpc.tf_vpc.id 
 
   ingress {
@@ -57,6 +58,10 @@ resource "aws_security_group" "main" {
     to_port         = 0
     protocol        = "-1"
     cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "main"
   }
 }
 
