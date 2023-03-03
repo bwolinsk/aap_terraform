@@ -19,7 +19,7 @@ resource "aws_internet_gateway" "tf_gateway" {
 }
 
 resource "aws_internet_gateway_attachment" "tf_gateway_attachment" {
-  internet_gateway_id = aws_internet_gateway.tf_gatway.id
+  internet_gateway_id = aws_internet_gateway.tf_gateway.id
   vpc_id = aws_vpc.tf_vpc.id
 }
 
