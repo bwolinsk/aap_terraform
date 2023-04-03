@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "{{ region }}"
 }
 
 resource "aws_vpc" "tf_vpc" {
@@ -29,8 +29,8 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_instance" "example" {
-  ami = "ami-0c9978668f8d55984"
-  instance_type = "t2.micro"
+  ami = "{{ ami }}"
+  instance_type = "{{ instance_type }}"
   key_name      = "controller_bart"
   count         = "1"
   subnet_id     = aws_subnet.tf_subnet.id
