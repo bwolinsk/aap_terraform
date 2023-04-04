@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "{{ region }}"
+  region = "us-east-1"
 }
 
 resource "aws_vpc" "tf_vpc" {
