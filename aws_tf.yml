@@ -10,6 +10,6 @@
   - name: Define the backend configuration at init
     cloud.terraform.terraform:
       project_path: './tf/'
-      variables_file: './vars/aws_vars.tfvars'
+      variables_file: './vars/aws_vars.auto.tfvars'
       state: "present"
       force_init: true
