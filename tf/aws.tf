@@ -1,20 +1,5 @@
-variable "region_name" {
-  type        = string
-  description = "The AWS region to provision resources into."
-}
-
-variable "ami_id" {
-  type        = string
-  description = "The id of the AMI that will be used for the EC2 instances created by the TF plan."
-}
-
-variable "instance_type" {
-  type        = string
-  description = "The EC2 instance type that will be used to create new EC2 instances."
-}
-
 provider "aws" {
-  region  = var.region_name
+  region  = "us-east-1"
 }
 
 resource "aws_vpc" "tf_vpc" {
@@ -44,8 +29,8 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_instance" "example" {
-  ami = var.ami_id
-  instance_type = var.instance_type
+  ami = "ami-0c9978668f8d55984"
+  instance_type = "t2.micro"
   key_name      = "controller_bart"
   count         = "1"
   subnet_id     = aws_subnet.tf_subnet.id
