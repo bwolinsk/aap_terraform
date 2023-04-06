@@ -29,7 +29,6 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_security_group" "Terraform_Demo_SG" {
-  name        = var.name_tag
 
   ingress {
     from_port   = "22"
