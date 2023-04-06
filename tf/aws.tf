@@ -29,7 +29,8 @@ resource "aws_subnet" "tf_subnet" {
 }
 
 resource "aws_security_group" "Terraform_Demo_SG" {
-
+  vpc_id = aws_vpc.tf_vpc.id
+  
   ingress {
     from_port   = "22"
     to_port     = "22"
