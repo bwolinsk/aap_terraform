@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "tf_vpc" {
-  cidr_block = "192.168.22.0/24"
+  cidr_block = "192.168.22.0/16"
 
   tags = {
     Name = "tf_vpc"
