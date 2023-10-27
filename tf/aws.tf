@@ -31,7 +31,7 @@ resource "aws_subnet" "tf_subnet" {
 resource "aws_instance" "example" {
   ami = "ami-026ebd4cfe2c043b2"
   instance_type = "t2.micro"
-  key_name      = "insights_controller"
+  key_name      = "controlla"
   count         = "1"
   subnet_id     = aws_subnet.tf_subnet.id
 }
